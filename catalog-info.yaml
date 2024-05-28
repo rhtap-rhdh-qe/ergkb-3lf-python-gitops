@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ergkb-3lf-python-gitops
+  description: This is GitOps manifest for ergkb-3lf-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: ergkb-3lf-python
+    janus-idp.io/tekton: ergkb-3lf-python 
+    backstage.io/kubernetes-id: ergkb-3lf-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ergkb-3lf-python
